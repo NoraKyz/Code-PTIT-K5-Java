@@ -1,0 +1,23 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class ChiaHetCho11 {
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    int t = Integer.parseInt(sc.nextLine());
+    while(t-- > 0) {
+      BigInteger n = sc.nextBigInteger();
+
+      if(n.mod(BigInteger.valueOf(11)).equals(BigInteger.ZERO)) {
+        System.out.println("1");
+      } else {
+        System.out.println("0");
+      }
+
+    }
+
+    sc.close();
+  }
+}
