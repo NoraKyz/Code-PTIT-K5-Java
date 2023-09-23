@@ -37,5 +37,5 @@ class Fraction {
 
     public String toString() {
         return this.numerator + "/" + this.denominator;
-    }
+    } 
 }

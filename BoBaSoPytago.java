@@ -1,32 +1,18 @@
 import java.util.*;
 
 public class BoBaSoPytago {
-    static long t, n;
-    static long[] a = new long[100001];
-
-    static String Solve(long[] a) {
-        for (int i = 1; i <= n - 1; i++) {
-            long l = i + 1, r = n, s = a[(int) l] * a[(int) l] + a[(int) i] * a[(int) i];
-            while (l < r) {
-                while (l < r && a[(int) r] * a[(int) r] > s)
-                    r--;
-                if (a[(int) r] * a[(int) r] == s)
-                    return "YES";
-                l++;
-            }
-        }
-        return "NO";
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        t = sc.nextLong();
+        int t = sc.nextInt();
         while (t-- > 0) {
-            n = sc.nextLong();
-            for (int i = 1; i <= n; i++)
+            int n = sc.nextInt();
+            long[] a = new long[n];
+
+            for (int i = 0; i < n; i++)
                 a[i] = sc.nextLong();
-            Arrays.sort(a, 1, (int) (n + 1));
-            System.out.println(Solve(a));
+
+            Arrays.sort(a);
+            System.out.println(Solve(a, n));
         }
         sc.close();
     }
